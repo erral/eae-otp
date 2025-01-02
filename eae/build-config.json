@@ -2,5 +2,6 @@
   "osmDefaults": {
     "timeZone": "Europe/Madrid",
     "osmTagMapping": "default"
-  }
+  },
+  "transitModelTimeZone": "Europe/Madrid"
 }
