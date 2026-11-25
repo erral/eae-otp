@@ -125,7 +125,7 @@ Consequences:
 
 | Command | Result |
 | --- | --- |
-| `--build --save` | Not re-run here. The existing `eae/graph.obj` (220.7 MB, generated 2026-11-25 with the 2.11 snapshot) proves the input set builds with this image and that `--save` produced the artifact. |
+| `--build --save` | The existing `eae/graph.obj` (213 MB, serialization id 277) was built with the 2.10.0 image and proves the input set builds and that `--save` produced the artifact. The same graph cannot be loaded by the 2.11.0-SNAPSHOT image because of the serialization id. |
 | `--load --serve` | HTTP 200 on port 8080 after ~9 s. |
 | `--load` (without `--serve`) | `Grizzly server running`, HTTP 200 after ~9 s. |
 | `--serve` (alone) | `ERROR ... Parameter error: Nothing to do. Use --help to see available options.` |
@@ -241,12 +241,13 @@ official docs point at, so the README is consistent with the docs — but it mea
 
 ### 6.2 Why that is risky in practice
 
-**[Observed]** The existing `eae/graph.obj` was built with the 2.11.0-SNAPSHOT image
-(serialization id 292). Trying to serve it with the stable 2.10.0 image fails:
+**[Observed]** The current `eae/graph.obj` reports serialization id 277: it was built with
+the stable 2.10.0 image and loads with it. Trying to serve the same graph with the
+2.11.0-SNAPSHOT image fails:
 
 ```
 The graph file is incompatible with this version of OTP. The OTP serialization version id
-'277' do not match the id '292' in '/var/opentripplanner/graph.obj' file-header.
+'292' do not match the id '277' in '/var/opentripplanner/graph.obj' file-header.
 ```
 
 `--load` therefore couples the graph file to the exact OTP serialization version. If the
@@ -310,8 +311,9 @@ or, stronger, the multi-arch manifest digest:
 docker.io/opentripplanner/opentripplanner@sha256:8d54e5c589186707ee365417f2202dc878c451fa3001b8edff07019531100933
 ```
 
-**Important:** if you pin `2.10.0`, rebuild `graph.obj`. The current graph was built with
-the 2.11.0-SNAPSHOT image (serialization id 292) and cannot be loaded by 2.10.0 (id 277).
+**Important:** if you switch versions, rebuild `graph.obj`. The current graph has
+serialization id 277 and matches the pinned `2.10.0` image; a graph built with a different
+OTP version (for example the `2.11.0-SNAPSHOT` tag) cannot be loaded by it.
 Pinning also means that an OTP upgrade becomes a deliberate act (rebuild graph, re-test)
 rather than a side effect of `docker run`.
 
@@ -346,13 +348,13 @@ Measured inputs in `eae/` at review time:
 | Total GTFS zip size | 69.5 MB |
 | Total `stop_times.txt` rows | 4,210,909 (largest feed: 1,829,967 — Renfe Cercanías) |
 | OSM PBF size | 107.2 MB (Basque Country + Navarra) |
-| Resulting `graph.obj` | 220.7 MB |
+| Resulting `graph.obj` | 213 MB |
 
 **[Docs]** The official System Requirements page says OTP memory use ranges “from less than
 one GB to more than 100 GB”, giving Finland at a bit over 10 GB and Germany at 95 GB as
 examples.
 
-**[Observed]** The 220.7 MB graph loads and serves in about 9 seconds with `-Xmx8g`.
+**[Observed]** The 213 MB graph loads and serves in about 9 seconds with `-Xmx8g`.
 
 **[Inference]** 8 GB is plausible and comfortable for this dataset, which is much smaller
 than the Finland or Germany examples. It may well build with 4 GB, but 8 GB is a safe,
@@ -363,7 +365,7 @@ documented default and matches the official quick-start. Two caveats:
   under-provisioned host will be killed by the OOM killer.
 - The graph was already present when this review started; I did not re-run the full build
   (that would have overwritten the existing artifact, and the host had only ~3 GB free at
-  the time). The existence of a valid 220.7 MB `graph.obj` and its successful load are the
+  the time). The existence of a valid 213 MB `graph.obj` and its successful load are the
   direct evidence that the build pipeline works, but the exact peak build memory was not
   measured here.
 
@@ -533,7 +535,17 @@ The findings above were acted on after the review:
   unsupported `frequencySec` integer. `eae/router-config.json` was regenerated.
 - `README.md` now uses `python3`, pins the image to the stable `2.10.0` release,
   binds the server to `127.0.0.1:8080`, and drops the redundant `--serve`.
+- Added `docker/Dockerfile` and `docker/certs/izenpe-com.crt`: the official image does
+  not trust the `Izenpe.com` root CA, so EAE's realtime feeds fail TLS after redirecting
+  to `s3.itbatera.euskadi.eus`. The README now builds and uses `eae-otp:2.10.0`.
 - The README documents that the graph must be rebuilt when the OTP version changes.
+
+**[Observed]** The realtime fix was verified with `eae-otp:2.10.0 --load
+--abortOnUnknownConfig`: the server started, there were **0** PKIX/TLS errors and **0**
+unknown configuration parameters, and the updaters fetched the feeds. 65 of the 66 feeds
+returned data at that moment; `bilbobus/gtfsrt_bilbobus_vehicle_positions.pb` answered
+HTTP 200 with a **zero-byte body**, which is an upstream feed problem (OTP logs
+`Message missing required fields: header`).
 
 If the image tag is bumped later, re-run the checks in sections 3 and 6 against
 the new version and rebuild `graph.obj`.

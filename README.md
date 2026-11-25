@@ -29,22 +29,30 @@ GTFS fitxategiak aurrez deskargatuta badituzu, `--skip-gtfs` erabil dezakezu.
 
 Komando guztiak errepositorioaren erro direktoriotik exekutatu behar dira, `$(pwd)/eae` bidea zuzena izan dadin.
 
-2. Exekutatu komando hau planifikatzailearen grafoa sortzeko:
+2. Eraiki OTP irudia Izenpe ziurtagiriarekin:
+
+```bash
+docker build -t eae-otp:2.10.0 docker/
+```
+
+OTPren irudi ofizialak ez du `Izenpe.com` erro-ziurtagiria jasotzen. EAEko denbora errealeko feedak `s3.itbatera.euskadi.eus`-era berbideratzen dira, eta haren ziurtagiri-katea Izenpe.com erroan amaitzen da. `docker/` karpetako Dockerfileak erro-ziurtagiri hori Java-ren truststorean gehitzen du; bestela OTPk ezingo ditu denbora errealeko datuak deskargatu (`PKIX path building failed`).
+
+3. Exekutatu komando hau planifikatzailearen grafoa sortzeko:
 
 ```bash
 docker run --rm \
  -e JAVA_TOOL_OPTIONS='-Xmx8g' \
  -v "$(pwd)/eae:/var/opentripplanner" \
- docker.io/opentripplanner/opentripplanner:2.10.0 --build --save
+ eae-otp:2.10.0 --build --save
 ```
 
-3. Exekutatu komando hau planifikatzailea martxan jartzeko:
+4. Exekutatu komando hau planifikatzailea martxan jartzeko:
 
 ```bash
 docker run --rm -p 127.0.0.1:8080:8080 \
     -e JAVA_TOOL_OPTIONS='-Xmx8g' \
     -v "$(pwd)/eae:/var/opentripplanner" \
-    docker.io/opentripplanner/opentripplanner:2.10.0 --load
+    eae-otp:2.10.0 --load
 ```
 
 `--load` aukerak zerbitzaria automatikoki abiarazten du (`--serve` inplizitua da). OTPren bertsio bera erabili behar da grafoa eraikitzeko eta zerbitzaria martxan jartzeko: `graph.obj` fitxategia OTP bertsio jakin batekin da bateragarria. Beraz, bertsioa aldatzen duzunean, eraiki grafoa berriro. `-Xmx8g` datu-multzo honetarako nahikoa da, baina memoria gehiago behar izanez gero handitu egin daiteke.
@@ -54,6 +62,8 @@ docker run --rm -p 127.0.0.1:8080:8080 \
 - **EAE**: [moveuskadi GTFS indizea](https://s3.itbatera.euskadi.eus/02-pro-e3525cfb1b3d99109c5220a2b24bcb30-inet/transport/moveuskadi/data-index-gtfs.json) eta [GTFS-RT indizea](https://s3.itbatera.euskadi.eus/02-pro-e3525cfb1b3d99109c5220a2b24bcb30-inet/transport/moveuskadi/data-index-gtfs-rt.json).
 - **Nafarroa**: [Garraio publiko interurbanoaren GTFSa](https://datosabiertos.navarra.es/es/dataset/ebfb5edd-0cd9-4b31-b0d9-8bc2d25e2493/resource/d3c1c89a-5d4c-4c25-97b5-66da663d3691/download/gtfs.zip) (Nafarroako Gobernua, autobus interurbanoak).
 - **OSM**: [Geofabrik](https://download.geofabrik.de/europe/spain/)-en Euskadi eta Nafarroako mozketak.
+
+EAEko denbora errealeko datuak OTPk berak deskargatzen eta parseatzen ditu zerbitzaria martxan dagoen bitartean (`router-config.json`-ko updater-ak). Nafarroako GTFSak, ordea, ez du denbora errealeko feederik.
 
 Scriptak abisu bat ematen du GTFS fitxategi baten zerbitzu-datak iraganean amaituta badaude, OTPk fitxategia inportatuko baitu baina egun horietarako bidaiarik sortuko ez duelako.
 
