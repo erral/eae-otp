@@ -14,7 +14,7 @@ Atrebitzen zara datuak benetakoak diren probatzera?
 1. Exekutatu komando hau termina baten datuak deskargatzeko:
 
 ```bash
-python download_and_process.py
+python3 download_and_process.py
 ```
 
 Scriptak GTFS eta OSM fitxategiak deskargatu, egiaztatu eta `eae/` karpetan uzten ditu. Gainera, `eae/build-config.json` eta `eae/router-config.json` fitxategiak sortzen ditu, GTFS bakoitzari `feedId` egonkor bat esleituz eta denbora errealeko feederak feed horiekin lotuz.
@@ -22,10 +22,12 @@ Scriptak GTFS eta OSM fitxategiak deskargatu, egiaztatu eta `eae/` karpetan uzte
 OSM fitxategiak berriro deskargatu nahi ez badituzu (handiak dira eta gutxitan aldatzen dira):
 
 ```bash
-python download_and_process.py --skip-osm
+python3 download_and_process.py --skip-osm
 ```
 
 GTFS fitxategiak aurrez deskargatuta badituzu, `--skip-gtfs` erabil dezakezu.
+
+Komando guztiak errepositorioaren erro direktoriotik exekutatu behar dira, `$(pwd)/eae` bidea zuzena izan dadin.
 
 2. Exekutatu komando hau planifikatzailearen grafoa sortzeko:
 
@@ -33,17 +35,19 @@ GTFS fitxategiak aurrez deskargatuta badituzu, `--skip-gtfs` erabil dezakezu.
 docker run --rm \
  -e JAVA_TOOL_OPTIONS='-Xmx8g' \
  -v "$(pwd)/eae:/var/opentripplanner" \
- docker.io/opentripplanner/opentripplanner:latest --build --save
+ docker.io/opentripplanner/opentripplanner:2.10.0 --build --save
 ```
 
-3. Exekutatu komando hau planifikatzeailea martxan jartzeko:
+3. Exekutatu komando hau planifikatzailea martxan jartzeko:
 
 ```bash
-docker run -it --rm -p 8080:8080 \
+docker run --rm -p 127.0.0.1:8080:8080 \
     -e JAVA_TOOL_OPTIONS='-Xmx8g' \
     -v "$(pwd)/eae:/var/opentripplanner" \
-    docker.io/opentripplanner/opentripplanner:latest --load --serve
+    docker.io/opentripplanner/opentripplanner:2.10.0 --load
 ```
+
+`--load` aukerak zerbitzaria automatikoki abiarazten du (`--serve` inplizitua da). OTPren bertsio bera erabili behar da grafoa eraikitzeko eta zerbitzaria martxan jartzeko: `graph.obj` fitxategia OTP bertsio jakin batekin da bateragarria. Beraz, bertsioa aldatzen duzunean, eraiki grafoa berriro. `-Xmx8g` datu-multzo honetarako nahikoa da, baina memoria gehiago behar izanez gero handitu egin daiteke.
 
 ## Datu-iturriak
 

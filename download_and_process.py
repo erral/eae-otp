@@ -342,13 +342,13 @@ def build_updater(item, known_feed_ids):
 
     base = {"url": url, "feedId": feed_id}
     if file_format == VEHICLE_POSITION:
-        return {**base, "type": "vehicle-positions", "frequencySec": 60}
+        return {**base, "type": "vehicle-positions", "frequency": "60s"}
     if file_format == ALERTS:
-        return {**base, "type": "real-time-alerts", "frequencySec": 30}
+        return {**base, "type": "real-time-alerts", "frequency": "30s"}
     return {
         **base,
         "type": "stop-time-updater",
-        "frequencySec": 60,
+        "frequency": "60s",
         "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
     }
 
