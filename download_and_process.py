@@ -2,6 +2,8 @@
 """Download EAE/Nafarroa transport data and generate the OTP configuration."""
 
 import argparse
+import csv
+import io
 import json
 import os
 import re
@@ -12,6 +14,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import zipfile
+from datetime import date
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -136,12 +139,57 @@ def download_file(url, destination):
     raise RuntimeError(f"Cannot download {url}: {last_error}")
 
 
+def read_gtfs_table(archive, name):
+    """Read a GTFS text file from an open zip archive."""
+    with archive.open(name) as fp:
+        text = io.TextIOWrapper(fp, encoding="utf-8-sig", newline="")
+        return list(csv.DictReader(text))
+
+
+def feed_last_service_date(archive):
+    """Return the latest service date (YYYYMMDD) declared by a GTFS feed."""
+    names = {Path(info.filename).name for info in archive.infolist()}
+
+    if "feed_info.txt" in names:
+        ends = [
+            row.get("feed_end_date", "").strip()
+            for row in read_gtfs_table(archive, "feed_info.txt")
+        ]
+        ends = [end for end in ends if end]
+        if ends:
+            return max(ends)
+
+    if "calendar.txt" in names:
+        ends = [
+            row.get("end_date", "").strip()
+            for row in read_gtfs_table(archive, "calendar.txt")
+        ]
+        ends = [end for end in ends if end]
+        if ends:
+            return max(ends)
+
+    if "calendar_dates.txt" in names:
+        last = None
+        with archive.open("calendar_dates.txt") as fp:
+            reader = csv.DictReader(
+                io.TextIOWrapper(fp, encoding="utf-8-sig", newline="")
+            )
+            for row in reader:
+                value = (row.get("date") or "").strip()
+                if value and (last is None or value > last):
+                    last = value
+        return last
+
+    return None
+
+
 def validate_gtfs(path):
     """Raise an error if a downloaded GTFS file is empty, corrupt or incomplete."""
     path = Path(path)
     if path.stat().st_size == 0:
         raise RuntimeError(f"GTFS file is empty: {path}")
 
+    last_service = None
     try:
         with zipfile.ZipFile(path) as archive:
             corrupt_member = archive.testzip()
@@ -166,10 +214,20 @@ def validate_gtfs(path):
                 raise RuntimeError(
                     f"GTFS file has empty tables ({', '.join(empty)}): {path}"
                 )
+
+            last_service = feed_last_service_date(archive)
     except zipfile.BadZipFile as exc:
         raise RuntimeError(f"GTFS file is not a valid zip archive: {path}") from exc
 
     print(f"Validated GTFS file: {path}")
+
+    if last_service and last_service < date.today().strftime("%Y%m%d"):
+        print(
+            f"WARNING: {path.name} has no service after {last_service} "
+            f"(today is {date.today().isoformat()}). OTP will import it, but it "
+            "will not produce trips for current dates. Ask the data publisher "
+            "for an updated feed."
+        )
 
 
 def validate_osm(path):

@@ -45,6 +45,14 @@ docker run -it --rm -p 8080:8080 \
     docker.io/opentripplanner/opentripplanner:latest --load --serve
 ```
 
+## Datu-iturriak
+
+- **EAE**: [moveuskadi GTFS indizea](https://s3.itbatera.euskadi.eus/02-pro-e3525cfb1b3d99109c5220a2b24bcb30-inet/transport/moveuskadi/data-index-gtfs.json) eta [GTFS-RT indizea](https://s3.itbatera.euskadi.eus/02-pro-e3525cfb1b3d99109c5220a2b24bcb30-inet/transport/moveuskadi/data-index-gtfs-rt.json).
+- **Nafarroa**: [Garraio publiko interurbanoaren GTFSa](https://datosabiertos.navarra.es/es/dataset/ebfb5edd-0cd9-4b31-b0d9-8bc2d25e2493/resource/d3c1c89a-5d4c-4c25-97b5-66da663d3691/download/gtfs.zip) (Nafarroako Gobernua, autobus interurbanoak).
+- **OSM**: [Geofabrik](https://download.geofabrik.de/europe/spain/)-en Euskadi eta Nafarroako mozketak.
+
+Scriptak abisu bat ematen du GTFS fitxategi baten zerbitzu-datak iraganean amaituta badaude, OTPk fitxategia inportatuko baitu baina egun horietarako bidaiarik sortuko ez duelako.
+
 ## Petau itxe xauk!
 
 Ja! Eutsi frakei!
