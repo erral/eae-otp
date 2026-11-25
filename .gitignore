@@ -1,3 +1,5 @@
-eae/*.zip
+eae/*.zip*
 eae/*.pbf
 eae/*.obj
+eae/.staging-*/
+eae/*.tmp

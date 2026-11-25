@@ -1,7 +1,189 @@
 {
   "osmDefaults": {
-    "timeZone": "Europe/Madrid",
-    "osmTagMapping": "default"
+    "osmTagMapping": "default",
+    "timeZone": "Europe/Madrid"
   },
+  "transitFeeds": [
+    {
+      "feedId": "alavabus",
+      "source": "gtfs-alavabus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "arrasate",
+      "source": "gtfs-arrasate.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "bermibusa",
+      "source": "gtfs-bermibusa.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "bilbobus",
+      "source": "gtfs-bilbobus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "bizkaibus",
+      "source": "gtfs-bizkaibus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "dbus",
+      "source": "gtfs-dbus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "eibar",
+      "source": "gtfs-eibar.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "ekialdebus",
+      "source": "gtfs-ekialdebus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "erandio_busa",
+      "source": "gtfs-erandio_busa.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "errenteria",
+      "source": "gtfs-errenteria.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "etxebarribus",
+      "source": "gtfs-etxebarribus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "euskotren",
+      "source": "gtfs-euskotren.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "euskotren_bus",
+      "source": "gtfs-euskotren_bus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "funicular_artxanda",
+      "source": "gtfs-funicular_artxanda.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "goierrialdea",
+      "source": "gtfs-goierrialdea.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "guipuzkoana",
+      "source": "gtfs-guipuzkoana.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "hernaniko_hiribusa",
+      "source": "gtfs-hernaniko_hiribusa.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "irunbus",
+      "source": "gtfs-irunbus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "kbus",
+      "source": "gtfs-kbus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "la_union",
+      "source": "gtfs-la_union.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "lejoan_busa",
+      "source": "gtfs-lejoan_busa.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "metro_bilbao",
+      "source": "gtfs-metro_bilbao.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "muittu_manttangorri_lasarte",
+      "source": "gtfs-muittu_manttangorri_lasarte.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "nafarroa",
+      "source": "gtfs-nafarroa.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "oiartzun",
+      "source": "gtfs-oiartzun.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "onati",
+      "source": "gtfs-onati.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "pesa",
+      "source": "gtfs-pesa.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "pte_colgante",
+      "source": "gtfs-pte_colgante.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "renfe_cercanias",
+      "source": "gtfs-renfe_cercanias.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "renfe_media",
+      "source": "gtfs-renfe_media.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "sopelbus",
+      "source": "gtfs-sopelbus.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "tbh",
+      "source": "gtfs-tbh.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "tolosa",
+      "source": "gtfs-tolosa.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "tolosaldea",
+      "source": "gtfs-tolosaldea.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "tuvisa",
+      "source": "gtfs-tuvisa.zip",
+      "type": "gtfs"
+    },
+    {
+      "feedId": "zarauzko_hiribusa",
+      "source": "gtfs-zarauzko_hiribusa.zip",
+      "type": "gtfs"
+    }
+  ],
   "transitModelTimeZone": "Europe/Madrid"
 }

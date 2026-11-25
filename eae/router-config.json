@@ -1,1 +1,413 @@
-{"updaters": [{"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/alavabus/alert.bin", "feedId": "alavabus"}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/alavabus/tripUpdate.bin", "feedId": "alavabus"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/alavabus/position.bin", "feedId": "alavabus", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfsrt_goierrialdea_vehicle_positions.pb", "feedId": "goierrialdea", "frequencySec": 60}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfsrt_goierrialdea_trip_updates.pb", "feedId": "goierrialdea"}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/ekialdebus/gtfsrt_ekialdebus_trip_updates.pb", "feedId": "ekialdebus"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/ekialdebus/gtfsrt_ekialdebus_vehicle_positions.pb", "feedId": "ekialdebus", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/guipuzkoana/gtfsrt_guipuzkoana_vehicle_positions.pb", "feedId": "guipuzkoana", "frequencySec": 60}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/guipuzkoana/gtfsrt_guipuzkoana_trip_updates.pb", "feedId": "guipuzkoana"}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/etxebarribus/gtfsrt_etxebarribus_alerts.pb", "feedId": "etxebarribus"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/etxebarribus/gtfsrt_etxebarribus_vehicle_positions.pb", "feedId": "etxebarribus", "frequencySec": 60}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tbh/gtfsrt_tbh_trip_updates.pb", "feedId": "tbh"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tbh/gtfsrt_tbh_vehicle_positions.pb", "feedId": "tbh", "frequencySec": 60}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/lejoan_busa/gtfsrt_lejoan_busa_alerts.pb", "feedId": "lejoan_busa"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lejoan_busa/gtfsrt_lejoan_busa_vehicle_positions.pb", "feedId": "lejoan_busa", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/sopelbus/gtfsrt_sopelbus_vehicle_positions.pb", "feedId": "sopelbus", "frequencySec": 60}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/sopelbus/gtfsrt_sopelbus_alerts.pb", "feedId": "sopelbus"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/bilbobus/gtfsrt_bilbobus_vehicle_positions.pb", "feedId": "bilbobus", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/pesa/gtfsrt_pesa_vehicle_positions.pb", "feedId": "pesa", "frequencySec": 60}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/pesa/gtfsrt_pesa_trip_updates.pb", "feedId": "pesa"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/pesa/gtfsrt_pesa_vehicle_positions.pb", "feedId": "pesa", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/bizkaibus/gtfsrt_Bizkaibus_vehicle_positions.pb", "feedId": "bizkaibus", "frequencySec": 60}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/bizkaibus/gtfsrt_bizkaibus_trip_updates.pb", "feedId": "bizkaibus"}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/bizkaibus/gtfsrt_Bizkaibus_alerts.pb", "feedId": "bizkaibus"}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/kbus/gtfsrt_kbus_alerts.pb", "feedId": "kbus"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/kbus/gtfsrt_kbus_vehicle_positions.pb", "feedId": "kbus", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/euskotren_bus/gtfsrt_euskotren_bus_vehicle_positions.pb", "feedId": "euskotren_bus", "frequencySec": 60}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/euskotren_bus/gtfsrt_euskotren_bus_trip_updates.pb", "feedId": "euskotren_bus"}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tolosaldea/gtfsrt_tolosaldea_trip_updates.pb", "feedId": "tolosaldea"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tolosaldea/gtfsrt_tolosaldea_vehicle_positions.pb", "feedId": "tolosaldea", "frequencySec": 60}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/bermibusa/gtfsrt_bermibusa_alerts.pb", "feedId": "bermibusa"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/bermibusa/gtfsrt_bermibusa_vehicle_positions.pb", "feedId": "bermibusa", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/dbus/gtfsrt_dbus_vehicle_positions.pb", "feedId": "dbus", "frequencySec": 60}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/dbus/gtfsrt_dbus_trip_updates.pb", "feedId": "dbus"}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/tuvisa/gtfsrt_tuvisa_trip_updates.pb", "feedId": "tuvisa"}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/tuvisa/gtfsrt_tuvisa_alerts.pb", "feedId": "tuvisa"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/tuvisa/gtfsrt_tuvisa_vehicle_positions.pb", "feedId": "tuvisa", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/erandio_busa/gtfsrt_erandio_busa_vehicle_positions.pb", "feedId": "erandio_busa", "frequencySec": 60}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/erandio_busa/gtfsrt_erandio_busa_alerts.pb", "feedId": "erandio_busa"}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/euskotren/gtfsrt_euskotren_alerts.pb", "feedId": "euskotren"}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/euskotren/gtfsrt_euskotren_trip_updates.pb", "feedId": "euskotren"}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/euskotren/gtfsrt_euskotren_vehicle_positions.pb", "feedId": "euskotren", "frequencySec": 60}, {"type": "vehicle-positions", "url": "https://opendata.euskadi.eus/transport/moveuskadi/metro_bilbao/gtfsrt_metro_bilbao_vehicle_positions.pb", "feedId": "metro_bilbao", "frequencySec": 60}, {"type": "real-time-alerts", "frequencySec": 30, "url": "https://opendata.euskadi.eus/transport/moveuskadi/metro_bilbao/gtfsrt_metro_bilbao_alerts.pb", "feedId": "metro_bilbao"}, {"type": "stop-time-updater", "frequencySec": 60, "backwardsDelayPropagationType": "REQUIRED_NO_DATA", "url": "https://opendata.euskadi.eus/transport/moveuskadi/metro_bilbao/gtfsrt_metro_bilbao_trip_updates.pb", "feedId": "metro_bilbao"}]}
+{
+  "updaters": [
+    {
+      "feedId": "alavabus",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/alavabus/alert.bin"
+    },
+    {
+      "feedId": "arrasate",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/arrasate/gtfsrt_arrasate_alerts.pb"
+    },
+    {
+      "feedId": "bermibusa",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/bermibusa/gtfsrt_bermibusa_alerts.pb"
+    },
+    {
+      "feedId": "bizkaibus",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/bizkaibus/gtfsrt_Bizkaibus_alerts.pb"
+    },
+    {
+      "feedId": "dbus",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/dbus/gtfsrt_dbus_alerts.pb"
+    },
+    {
+      "feedId": "eibar",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/eibar/gtfsrt_udalbus_eibar_alerts.pb"
+    },
+    {
+      "feedId": "ekialdebus",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/ekialdebus/gtfsrt_ekialdebus_alerts.pb"
+    },
+    {
+      "feedId": "errenteria",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/errenteria/gtfsrt_errenteriako urbanoa_alerts.pb"
+    },
+    {
+      "feedId": "etxebarribus",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/etxebarribus/gtfsrt_etxebarribus_alerts.pb"
+    },
+    {
+      "feedId": "euskotren",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/euskotren/gtfsrt_euskotren_alerts.pb"
+    },
+    {
+      "feedId": "euskotren_bus",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/euskotren_bus/gtfsrt_euskotren_bus_alerts.pb"
+    },
+    {
+      "feedId": "goierrialdea",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfsrt_goierrialdea_alerts.pb"
+    },
+    {
+      "feedId": "guipuzkoana",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/guipuzkoana/gtfsrt_guipuzkoana_alerts.pb"
+    },
+    {
+      "feedId": "hernaniko_hiribusa",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/hernaniko_hiribusa/gtfsrt_hernaniko_hiribusa_alerts.pb"
+    },
+    {
+      "feedId": "kbus",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/kbus/gtfsrt_kbus_alerts.pb"
+    },
+    {
+      "feedId": "lejoan_busa",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lejoan_busa/gtfsrt_lejoan_busa_alerts.pb"
+    },
+    {
+      "feedId": "oiartzun",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/oiartzun/gtfsrt_xorrola oiartzun_alerts.pb"
+    },
+    {
+      "feedId": "onati",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/onati/gtfsrt_onati_alerts.pb"
+    },
+    {
+      "feedId": "pesa",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/pesa/gtfsrt_pesa_alerts.pb"
+    },
+    {
+      "feedId": "sopelbus",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/sopelbus/gtfsrt_sopelbus_alerts.pb"
+    },
+    {
+      "feedId": "tbh",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tbh/gtfsrt_tbh_alerts.pb"
+    },
+    {
+      "feedId": "tolosa",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tolosa/gtfsrt_tolosa_alerts.pb"
+    },
+    {
+      "feedId": "tolosaldea",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tolosaldea/gtfsrt_tolosaldea_alerts.pb"
+    },
+    {
+      "feedId": "tuvisa",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/tuvisa/gtfsrt_tuvisa_alerts.pb"
+    },
+    {
+      "feedId": "zarauzko_hiribusa",
+      "frequencySec": 30,
+      "type": "real-time-alerts",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/zarauzko_hiribusa/gtfsrt_zarauzko_hiribusa_alerts.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "alavabus",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/alavabus/tripUpdate.bin"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "bizkaibus",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/bizkaibus/gtfsrt_bizkaibus_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "dbus",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/dbus/gtfsrt_dbus_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "ekialdebus",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/ekialdebus/gtfsrt_ekialdebus_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "euskotren",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/euskotren/gtfsrt_euskotren_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "euskotren_bus",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/euskotren_bus/gtfsrt_euskotren_bus_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "goierrialdea",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfsrt_goierrialdea_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "guipuzkoana",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/guipuzkoana/gtfsrt_guipuzkoana_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "metro_bilbao",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/metro_bilbao/gtfsrt_metro_bilbao_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "pesa",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/pesa/gtfsrt_pesa_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "tbh",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tbh/gtfsrt_tbh_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "tolosaldea",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tolosaldea/gtfsrt_tolosaldea_trip_updates.pb"
+    },
+    {
+      "backwardsDelayPropagationType": "REQUIRED_NO_DATA",
+      "feedId": "tuvisa",
+      "frequencySec": 60,
+      "type": "stop-time-updater",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/tuvisa/gtfsrt_tuvisa_trip_updates.pb"
+    },
+    {
+      "feedId": "alavabus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/alavabus/position.bin"
+    },
+    {
+      "feedId": "arrasate",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/arrasate/gtfsrt_arrasate_vehicle_position.pb"
+    },
+    {
+      "feedId": "bermibusa",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/bermibusa/gtfsrt_bermibusa_vehicle_positions.pb"
+    },
+    {
+      "feedId": "bilbobus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/bilbobus/gtfsrt_bilbobus_vehicle_positions.pb"
+    },
+    {
+      "feedId": "bizkaibus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/bizkaibus/gtfsrt_Bizkaibus_vehicle_positions.pb"
+    },
+    {
+      "feedId": "dbus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/dbus/gtfsrt_dbus_vehicle_positions.pb"
+    },
+    {
+      "feedId": "eibar",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/eibar/gtfsrt_udalbus_eibar_vehicle_positions.pb"
+    },
+    {
+      "feedId": "ekialdebus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/ekialdebus/gtfsrt_ekialdebus_vehicle_positions.pb"
+    },
+    {
+      "feedId": "erandio_busa",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/erandio_busa/gtfsrt_erandio_busa_vehicle_positions.pb"
+    },
+    {
+      "feedId": "errenteria",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/errenteria/gtfsrt_errenteriako urbanoa_vehicle_positions.pb"
+    },
+    {
+      "feedId": "etxebarribus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/etxebarribus/gtfsrt_etxebarribus_vehicle_positions.pb"
+    },
+    {
+      "feedId": "euskotren",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/euskotren/gtfsrt_euskotren_vehicle_positions.pb"
+    },
+    {
+      "feedId": "euskotren_bus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/euskotren_bus/gtfsrt_euskotren_bus_vehicle_positions.pb"
+    },
+    {
+      "feedId": "goierrialdea",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/goierrialdea/gtfsrt_goierrialdea_vehicle_positions.pb"
+    },
+    {
+      "feedId": "guipuzkoana",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/guipuzkoana/gtfsrt_guipuzkoana_vehicle_positions.pb"
+    },
+    {
+      "feedId": "hernaniko_hiribusa",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/hernaniko_hiribusa/gtfsrt_hernaniko_hiribusa_vehicle_positions.pb"
+    },
+    {
+      "feedId": "kbus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/kbus/gtfsrt_kbus_vehicle_positions.pb"
+    },
+    {
+      "feedId": "lejoan_busa",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lejoan_busa/gtfsrt_lejoan_busa_vehicle_positions.pb"
+    },
+    {
+      "feedId": "metro_bilbao",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/metro_bilbao/gtfsrt_metro_bilbao_vehicle_positions.pb"
+    },
+    {
+      "feedId": "oiartzun",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/oiartzun/gtfsrt_xorrola oiartzun_vehicle_positions.pb"
+    },
+    {
+      "feedId": "onati",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/onati/gtfsrt_onati_vehicle_positions.pb"
+    },
+    {
+      "feedId": "pesa",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/pesa/gtfsrt_pesa_vehicle_positions.pb"
+    },
+    {
+      "feedId": "sopelbus",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/sopelbus/gtfsrt_sopelbus_vehicle_positions.pb"
+    },
+    {
+      "feedId": "tbh",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tbh/gtfsrt_tbh_vehicle_positions.pb"
+    },
+    {
+      "feedId": "tolosa",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tolosa/gtfsrt_tolosa_vehicle_positions.pb"
+    },
+    {
+      "feedId": "tolosaldea",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/lurraldebus/tolosaldea/gtfsrt_tolosaldea_vehicle_positions.pb"
+    },
+    {
+      "feedId": "tuvisa",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/tuvisa/gtfsrt_tuvisa_vehicle_positions.pb"
+    },
+    {
+      "feedId": "zarauzko_hiribusa",
+      "frequencySec": 60,
+      "type": "vehicle-positions",
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/zarauzko_hiribusa/gtfsrt_zarauzko_hiribusa_vehicle_positions.pb"
+    }
+  ]
+}

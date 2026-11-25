@@ -17,6 +17,16 @@ Atrebitzen zara datuak benetakoak diren probatzera?
 python download_and_process.py
 ```
 
+Scriptak GTFS eta OSM fitxategiak deskargatu, egiaztatu eta `eae/` karpetan uzten ditu. Gainera, `eae/build-config.json` eta `eae/router-config.json` fitxategiak sortzen ditu, GTFS bakoitzari `feedId` egonkor bat esleituz eta denbora errealeko feederak feed horiekin lotuz.
+
+OSM fitxategiak berriro deskargatu nahi ez badituzu (handiak dira eta gutxitan aldatzen dira):
+
+```bash
+python download_and_process.py --skip-osm
+```
+
+GTFS fitxategiak aurrez deskargatuta badituzu, `--skip-gtfs` erabil dezakezu.
+
 2. Exekutatu komando hau planifikatzailearen grafoa sortzeko:
 
 ```bash
@@ -41,7 +51,11 @@ Ja! Eutsi frakei!
 
 Ba agian gure agintariek eta garraiobideek argitaratzen dituzten GTFS formatuko fitxategiak ez dira zuzenak!
 
-Errore hauek detektatu ditut orain arte:
+Scriptak deskargatutako GTFS fitxategiak automatikoki egiaztatzen ditu: zip hondatua, hutsik dagoena edo derrigorrezko fitxategiak falta dituena ezabatu eta errore mezua ematen du.
 
-- AlavaBus eragilearen fitxategia ez da zuzena, beraz deskargatu ostean ezabatu egin behar duzu.
-- LurraldeBus Tolosaldea eragilearen fitxategia hutsik dago (!!), beraz bere datuak ez dira agertuko.
+Hala ere, baliozkotze horrek ezin ditu arazo semantikoak detektatu (adibidez, ordutegiak edo ibilbideak gaizki egotea). Halakoak OTPren grafoa sortzean agertzen diren logetan ikusiko dituzu.
+
+Proiektuaren hasieran arazo hauek detektatu ziren, gaur egun konponduta daudela dirudien arren:
+
+- AlavaBus eragilearen fitxategia ez zen zuzena.
+- LurraldeBus Tolosaldea eragilearen fitxategia hutsik zegoen.
