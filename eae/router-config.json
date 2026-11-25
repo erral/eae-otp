@@ -46,7 +46,7 @@
       "feedId": "errenteria",
       "frequencySec": 30,
       "type": "real-time-alerts",
-      "url": "https://opendata.euskadi.eus/transport/moveuskadi/errenteria/gtfsrt_errenteriako urbanoa_alerts.pb"
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/errenteria/gtfsrt_errenteriako%20urbanoa_alerts.pb"
     },
     {
       "feedId": "etxebarribus",
@@ -100,7 +100,7 @@
       "feedId": "oiartzun",
       "frequencySec": 30,
       "type": "real-time-alerts",
-      "url": "https://opendata.euskadi.eus/transport/moveuskadi/oiartzun/gtfsrt_xorrola oiartzun_alerts.pb"
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/oiartzun/gtfsrt_xorrola%20oiartzun_alerts.pb"
     },
     {
       "feedId": "onati",
@@ -299,7 +299,7 @@
       "feedId": "errenteria",
       "frequencySec": 60,
       "type": "vehicle-positions",
-      "url": "https://opendata.euskadi.eus/transport/moveuskadi/errenteria/gtfsrt_errenteriako urbanoa_vehicle_positions.pb"
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/errenteria/gtfsrt_errenteriako%20urbanoa_vehicle_positions.pb"
     },
     {
       "feedId": "etxebarribus",
@@ -359,7 +359,7 @@
       "feedId": "oiartzun",
       "frequencySec": 60,
       "type": "vehicle-positions",
-      "url": "https://opendata.euskadi.eus/transport/moveuskadi/oiartzun/gtfsrt_xorrola oiartzun_vehicle_positions.pb"
+      "url": "https://opendata.euskadi.eus/transport/moveuskadi/oiartzun/gtfsrt_xorrola%20oiartzun_vehicle_positions.pb"
     },
     {
       "feedId": "onati",

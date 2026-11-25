@@ -78,15 +78,34 @@ def filename_from_url(url):
     return Path(path).name
 
 
+def normalize_url(url):
+    """Percent-encode characters that java.net.URI rejects (e.g. spaces).
+
+    Some EAE realtime URLs contain literal spaces, e.g.
+    ``gtfsrt_errenteriako urbanoa_vehicle_positions.pb``. OTP parses the
+    router configuration with ``java.net.URI``, which refuses them.
+    """
+    parts = urllib.parse.urlsplit(url)
+    path = urllib.parse.quote(parts.path, safe="/:@!$&'()*+,;=-._~%")
+    query = urllib.parse.quote(parts.query, safe="=&?/:@!$'()*+,;-._~%")
+    fragment = urllib.parse.quote(parts.fragment, safe="=&?/:@!$'()*+,;-._~%")
+    return urllib.parse.urlunsplit(
+        (parts.scheme, parts.netloc, path, query, fragment)
+    )
+
+
 def fetch_json(url):
     """Fetch and decode a JSON document."""
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    request = urllib.request.Request(
+        normalize_url(url), headers={"User-Agent": USER_AGENT}
+    )
     with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
         return json.load(response)
 
 
 def download_file(url, destination):
     """Download ``url`` into ``destination``, retrying on transient errors."""
+    url = normalize_url(url)
     destination = Path(destination)
     destination.parent.mkdir(parents=True, exist_ok=True)
 
@@ -194,6 +213,7 @@ def collect_gtfs_feeds():
             url = item.get("url")
             if not url:
                 continue
+            url = normalize_url(url)
             feed_id = unique_id(feed_id_from_url(url), used_ids)
             feeds.append(
                 {
@@ -251,6 +271,7 @@ def build_updater(item, known_feed_ids):
     url = item.get("url")
     if not url:
         return None
+    url = normalize_url(url)
 
     feed_id = feed_id_from_url(url)
     file_format = get_file_format(url)
